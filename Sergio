@@ -1,7 +1,22 @@
-echo "# Proyecto-final" >> README.md 
-git init 
-git add README.md 
-git commit -m "primer commit" 
-git branch -M main 
-git remote add origin https://github.com/sergiosergio1123/Proyecto-final.git
- git push -u origin main
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generador de Preguntas</title>
+</head>
+<body>
+    <h1>Generador de Preguntas</h1>
+    <form method="POST">
+        <label for="texto">Ingresa el texto:</label><br>
+        <textarea id="texto" name="texto" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Generar Preguntas">
+    </form>
+    {% if preguntas %}
+        <h2>Preguntas Generadas:</h2>
+        <ul>
+            {% for pregunta in preguntas %}
+                <li>{{ pregunta }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
